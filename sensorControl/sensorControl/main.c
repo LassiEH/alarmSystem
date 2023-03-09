@@ -26,17 +26,23 @@ volatile int8_t g_STATE = 0;
 
 int main(void)
 {
-	DDRB |= (1 << PB0);
-	DDRD &= ~(1 << PD5);
+	DDRB |= (1 << PB1); // ultrasonic echo
+	DDRB |= (1 << PB0); // passive buzzer
+	DDRD &= ~(1 << PD5); // IR-receiver
+	DDRD &= ~(1 << PD4); // ultrasonic trigger
     
     while (1) 
     {
 		
 		switch (g_STATE) {
 			case COM_CONNECT:
+				
 			case MOVEMENT_DETECT:
+				
 			case PASSW_NOTGIVEN:
+			
 			case PASSW_GIVEN:
+			
 			case INCORRECT_PASSW:
 			
     }
